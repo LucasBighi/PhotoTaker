@@ -10,13 +10,14 @@
 		96D2CB8E25ED2AAB00E5806C /* PhotoTaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D2CB8425ED2AAB00E5806C /* PhotoTaker.framework */; };
 		96D2CB9325ED2AAB00E5806C /* PhotoTakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CB9225ED2AAB00E5806C /* PhotoTakerTests.swift */; };
 		96D2CBA725ED2C0A00E5806C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CBA625ED2C0A00E5806C /* AppDelegate.swift */; };
-		96D2CBA925ED2C0A00E5806C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CBA825ED2C0A00E5806C /* SceneDelegate.swift */; };
 		96D2CBAB25ED2C0A00E5806C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CBAA25ED2C0A00E5806C /* ViewController.swift */; };
 		96D2CBAE25ED2C0A00E5806C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D2CBAC25ED2C0A00E5806C /* Main.storyboard */; };
 		96D2CBB025ED2C0C00E5806C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D2CBAF25ED2C0B00E5806C /* Assets.xcassets */; };
 		96D2CBB325ED2C0C00E5806C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D2CBB125ED2C0C00E5806C /* LaunchScreen.storyboard */; };
 		96D2CCAC25ED307D00E5806C /* PhotoServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CCAB25ED307D00E5806C /* PhotoServiceViewController.swift */; };
 		96D2CCAD25ED307D00E5806C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CCAA25ED307D00E5806C /* PhotoCollectionViewCell.swift */; };
+		96D2CCB825ED451100E5806C /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CCB725ED451100E5806C /* PhotoService.swift */; };
+		96D2CCBC25ED517400E5806C /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D2CCB725ED451100E5806C /* PhotoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 		96D2CB9425ED2AAB00E5806C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D2CBA425ED2C0A00E5806C /* PhotoTakerExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoTakerExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D2CBA625ED2C0A00E5806C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96D2CBA825ED2C0A00E5806C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		96D2CBAA25ED2C0A00E5806C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96D2CBAD25ED2C0A00E5806C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96D2CBAF25ED2C0B00E5806C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +45,7 @@
 		96D2CBB425ED2C0C00E5806C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D2CCAA25ED307D00E5806C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		96D2CCAB25ED307D00E5806C /* PhotoServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceViewController.swift; sourceTree = "<group>"; };
+		96D2CCB725ED451100E5806C /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				96D2CCAB25ED307D00E5806C /* PhotoServiceViewController.swift */,
+				96D2CCB725ED451100E5806C /* PhotoService.swift */,
 				96D2CCAA25ED307D00E5806C /* PhotoCollectionViewCell.swift */,
 				96D2CB8825ED2AAB00E5806C /* Info.plist */,
 			);
@@ -116,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				96D2CBA625ED2C0A00E5806C /* AppDelegate.swift */,
-				96D2CBA825ED2C0A00E5806C /* SceneDelegate.swift */,
 				96D2CBAA25ED2C0A00E5806C /* ViewController.swift */,
 				96D2CBAC25ED2C0A00E5806C /* Main.storyboard */,
 				96D2CBAF25ED2C0B00E5806C /* Assets.xcassets */,
@@ -267,6 +268,7 @@
 			files = (
 				96D2CCAC25ED307D00E5806C /* PhotoServiceViewController.swift in Sources */,
 				96D2CCAD25ED307D00E5806C /* PhotoCollectionViewCell.swift in Sources */,
+				96D2CCB825ED451100E5806C /* PhotoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D2CCBC25ED517400E5806C /* PhotoService.swift in Sources */,
 				96D2CB9325ED2AAB00E5806C /* PhotoTakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +287,6 @@
 			files = (
 				96D2CBAB25ED2C0A00E5806C /* ViewController.swift in Sources */,
 				96D2CBA725ED2C0A00E5806C /* AppDelegate.swift in Sources */,
-				96D2CBA925ED2C0A00E5806C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -428,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -445,20 +447,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CPGK826DG8;
+				DEVELOPMENT_TEAM = N63WMA8228;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PhotoTaker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoTaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbighi.PhotoTaker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -469,20 +473,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CPGK826DG8;
+				DEVELOPMENT_TEAM = N63WMA8228;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PhotoTaker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoTaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbighi.PhotoTaker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,7 +499,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CPGK826DG8;
+				DEVELOPMENT_TEAM = N63WMA8228;
 				INFOPLIST_FILE = PhotoTakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -512,7 +518,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CPGK826DG8;
+				DEVELOPMENT_TEAM = N63WMA8228;
 				INFOPLIST_FILE = PhotoTakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,13 +538,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CPGK826DG8;
+				DEVELOPMENT_TEAM = N63WMA8228;
 				INFOPLIST_FILE = PhotoTakerExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoTakerExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbighi.PhotoTakerExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,13 +558,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CPGK826DG8;
+				DEVELOPMENT_TEAM = N63WMA8228;
 				INFOPLIST_FILE = PhotoTakerExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoTakerExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbighi.PhotoTakerExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

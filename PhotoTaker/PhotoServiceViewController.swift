@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Photos
 
 public protocol PhotoServiceDelegate: NSObjectProtocol {
     func didSelectImage(_ image: UIImage)
@@ -23,9 +22,7 @@ public class PhotoServiceViewController: UIViewController {
     var cameraButton: UIButton!
     var cancelButton: UIButton!
     
-    var assetCollection: PHAssetCollection!
-    var photosAsset: PHFetchResult<AnyObject>!
-    var assetThumbnailSize: CGSize!
+    var service: PhotoService!
     
     public weak var delegate: PhotoServiceDelegate?
 
@@ -36,28 +33,13 @@ public class PhotoServiceViewController: UIViewController {
         setupCameraButton()
         setupCancelButton()
         setupCollectionView()
-        
-        let fetchOptions = PHFetchOptions()
-
-        let collection:PHFetchResult = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .any, options: fetchOptions)
-
-         if let first_Obj:AnyObject = collection.firstObject {
-             //found the album
-            self.assetCollection = first_Obj as? PHAssetCollection
-         }
     }
     
     public override func viewWillAppear(_ animated: Bool) {
-        // Get size of the collectionView cell for thumbnail image
         if let layout = collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {
-            let cellSize = layout.itemSize
-
-            assetThumbnailSize = cellSize
+            service = PhotoService(assetThumbnailSize: layout.itemSize)
         }
-
-        //fetch the photos from collection
-        photosAsset = (PHAsset.fetchAssets(in: assetCollection, options: nil) as AnyObject) as? PHFetchResult<AnyObject>
-
+        
         collectionView.reloadData()
     }
     
@@ -142,39 +124,27 @@ public class PhotoServiceViewController: UIViewController {
 
 extension PhotoServiceViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count = 0
-        
-        if photosAsset != nil {
-            count = photosAsset.count
-        }
-        
-        return count
+        return service.numberOfAssets()
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
-
-        //Modify the cell
-        let asset = photosAsset[indexPath.item] as! PHAsset
-
-        PHImageManager.default().requestImage(for: asset, targetSize: assetThumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { result, _ in
-            if let image = result {
+        service.requestImage(forAssetAtPosition: indexPath.row) { image in
+            if let image = image,
+               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell {
                 cell.setup(with: image)
             }
-        })
+        }
 
-        return cell
+        return UICollectionViewCell()
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let asset = photosAsset[indexPath.item] as! PHAsset
-
-        PHImageManager.default().requestImage(for: asset, targetSize: assetThumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { result, _ in
-            if let image = result {
+        service.requestImage(forAssetAtPosition: indexPath.row) { image in
+            if let image = image {
                 self.delegate?.didSelectImage(image)
             }
-        })
+        }
         dismissView()
     }
 
